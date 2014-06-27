@@ -1,0 +1,16 @@
+{% macro weather_cell(value, hl) %}
+    <td>
+        {% if hl %}<b>{% endif %}
+        {{ value }}
+        {% if hl %}</b>{% endif %}
+    </td>
+{% endmacro %}
+
+{% macro weather_row(month, min, max, rain, hl_min, hl_max, hl_rain) %}
+    <tr>
+        <td>{{ month }}</td>
+        {{ weather_cell(min, min <= hl_min) }}
+        {{ weather_cell(max, max >= hl_max) }}
+        {{ weather_cell(rain, rain >= hl_rain) }}
+    </tr>
+{% endmacro %}

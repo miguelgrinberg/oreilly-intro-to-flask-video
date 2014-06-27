@@ -1,0 +1,21 @@
+{% import 'macros.html' as macros %}
+<h1>Weather Averages</h1>
+<h2>{{ city }}</h2>
+<hr>
+<table>
+    <tr>
+        <th>Month</th>
+        <th>Min</th>
+        <th>Max</th>
+        <th>Rainfall</th>
+    </tr>
+    {% for month in months %}
+        {{ macros.weather_row(month,
+                              weather[month]['min'],
+                              weather[month]['max'], 
+                              weather[month]['rain'],
+                              highlight['min'],
+                              highlight['max'],
+                              highlight['rain']) }}
+    {% endfor %}
+</table>

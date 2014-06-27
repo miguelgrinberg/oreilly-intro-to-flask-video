@@ -1,0 +1,19 @@
+<h1>Weather Averages</h1>
+<h2>{{ city }}</h2>
+<hr>
+<table>
+    <tr>
+        <th>Month</th>
+        <th>Min</th>
+        <th>Max</th>
+        <th>Rainfall</th>
+    </tr>
+    {% for month in months %}
+    <tr>
+        <td>{{ month }}</td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    {% endfor %}
+</table>

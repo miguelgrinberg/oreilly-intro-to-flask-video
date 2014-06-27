@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block title %}Login Example{% endblock %}
+
+{% block page_content %}
+    <h1>Protected page</h1>
+    <p>This page can only be viewed by logged in users.</p>
+    <p>You are logged in as <b>{{ current_user.username }}</b>.</p>
+{% endblock %}

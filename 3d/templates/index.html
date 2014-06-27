@@ -1,0 +1,25 @@
+{% extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}File Upload Example{% endblock %}
+
+{% block navbar %}
+    <nav class="navbar navbar-inverse" role="navigation">
+        <div class="container">
+            <a class="navbar-brand" href="{{ url_for('index') }}">Upload</a>
+        </div>    
+    </nav>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                {{ wtf.quick_form(form, enctype='multipart/form-data') }}
+            </div>
+        </div>
+        {% if image %}
+            <img src={{ url_for('static', filename=image) }}>
+        {% endif %}
+    </div>
+{% endblock %}

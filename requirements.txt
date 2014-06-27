@@ -1,0 +1,13 @@
+Flask==0.10.1
+Flask-Bootstrap==3.1.1.2
+Flask-Login==0.2.10
+Flask-SQLAlchemy==1.0
+Flask-WTF==0.10.0
+Jinja2==2.7.3
+MarkupSafe==0.23
+SQLAlchemy==0.9.7
+WTForms==2.0.1
+Werkzeug==0.9.6
+coverage==3.7.1
+gunicorn==19.0.0
+itsdangerous==0.24

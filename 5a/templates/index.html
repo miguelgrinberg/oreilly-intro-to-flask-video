@@ -1,0 +1,30 @@
+{% extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}Relational Database Example{% endblock %}
+
+{% block navbar %}
+    <nav class="navbar navbar-inverse" role="navigation">
+        <div class="container">
+            <a class="navbar-brand" href="{{ url_for('index') }}">Hello</a>
+        </div>
+    </nav>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                {{ wtf.quick_form(form) }}
+            </div>
+        </div>
+        {% if name %}
+            <h1>Hello, {{ name }}!</h1>
+            {% if new %}
+                <p>Pleased to meet you!</p>
+            {% else %}
+                <p>Happy to see you again!</p>
+            {% endif %}
+        {% endif %}
+    </div>
+{% endblock %}

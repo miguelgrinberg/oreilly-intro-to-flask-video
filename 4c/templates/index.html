@@ -1,0 +1,15 @@
+<h1>This page contains HTML</h1>
+<p>
+    Cookie: 
+    {% if 'cookie' in request.cookies %}
+        <b>{{ request.cookies['cookie'] }}</b>
+    {% else %}
+        not set
+    {% endif %}
+</p>
+<p><a href="{{ url_for('text') }}">Click here</a> to view a page that contains plain text.</p>
+<p><a href="{{ url_for('xml') }}">Click here</a> to view a page that contains XML data.</p>
+<p><a href="{{ url_for('json') }}">Click here</a> to view a page that contains JSON data.</p>
+<p><a href="{{ url_for('redir') }}">Click here</a> to view a page that redirects to the plain text page.</p>
+<p><a href="{{ url_for('cookie') }}">Click here</a> to view a page that sets a cookie and then redirects back to this page.</p>
+<p><a href="{{ url_for('response') }}">Click here</a> to view a page that shows plain text through a response object.</p>

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% import 'macros.html' as macros %}
+
+{% block title %}Weather Averages for {{ city }}{% endblock %}
+
+{% block page_content %}
+    <h1>Weather Averages</h1>
+    <h2>{{ city }}</h2>
+    <table class="table table-hover">
+        <tr>
+            <th>Month</th>
+            <th>Min</th>
+            <th>Max</th>
+            <th>Rainfall</th>
+        </tr>
+        {% for month in months %}
+            {{ macros.weather_row(month,
+                                  weather[month]['min'],
+                                  weather[month]['max'], 
+                                  weather[month]['rain'],
+                                  highlight['min'],
+                                  highlight['max'],
+                                  highlight['rain']) }}
+        {% endfor %}
+    </table>
+{% endblock %}

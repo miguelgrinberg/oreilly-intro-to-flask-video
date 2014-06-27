@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block title %}Login Example{% endblock %}
+
+{% block page_content %}
+    <h1>Home page</h1>
+    <p>This page can be viewed by all users.</p>
+    <p>You are {% if not current_user.is_authenticated() %}not {% endif %}logged in.</p>
+{% endblock %}
