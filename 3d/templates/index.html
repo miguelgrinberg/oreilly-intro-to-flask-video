@@ -19,7 +19,7 @@
             </div>
         </div>
         {% if image %}
-            <img src={{ url_for('static', filename=image) }}>
+            <img src="{{ url_for('static', filename=image) }}">
         {% endif %}
     </div>
 {% endblock %}
